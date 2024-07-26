@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
+        /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
+        /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
+        int[] intAr = new int[10];
+
+
         //새로운 객체를 스캐너타입의 sc 변수안에 할당
         Scanner sc = new Scanner(System.in);
-        //레벨 1-1
-
         while (true) {
             /* 입력 부분 */
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -50,13 +53,18 @@ public class App {
 
                     break;
             }
-            // ---------------------------------------------------------------------------------------------------------
-            // 레벨 1-4
 
             //결과 출력
             System.out.println("결과: " + result);
-            /* 종료 부분 */
-            System.out.println("더 계산하시겠습니까? /exit(종료))");
+
+            /* 연산의 결과를 배열에 저장합니다. */
+            /* index를 증가 시킵니다. */
+
+            for (int i = 0; i < intAr.length; i++) {
+                intAr[i] = result;
+            }
+            // 종료 부분
+            System.out.println("더 계산하시겠습니까? 아무거나 입력하면 계속 실행 /exit(종료))");
             String end = sc.next();
             //exit 문자열을 비교할 때 == 대신 equals() 메서드를 사용해야 함
             // 나는 == 이걸 사용해서 계속 오류남 객체의 참조를 비교하기 때문에 문자열 내용이 같은지 확인하지 않음
