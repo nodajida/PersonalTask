@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -7,8 +8,10 @@ public class App {
     public static void main(String[] args) {
         /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
         /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
-        int[] intAr = new int[10];
 
+
+        // ArrayList 배열 생선 선언
+        ArrayList<Integer> intList = new ArrayList<Integer>();
 
         //새로운 객체를 스캐너타입의 sc 변수안에 할당
         Scanner sc = new Scanner(System.in);
@@ -53,16 +56,19 @@ public class App {
 
                     break;
             }
-
             //결과 출력
             System.out.println("결과: " + result);
+            /* 연산의 결과를 배열에 저장합니다. */
+            if (intList.size() >= 10) {
+                intList.remove(0); // 가장 먼저 저장된 결과 삭제
+            }
+            intList.add(result); // 새로운 결과를 추가
 
             /* 연산의 결과를 배열에 저장합니다. */
             /* index를 증가 시킵니다. */
 
-            for (int i = 0; i < intAr.length; i++) {
-                intAr[i] = result;
-            }
+
+
             // 종료 부분
             System.out.println("더 계산하시겠습니까? 아무거나 입력하면 계속 실행 /exit(종료))");
             String end = sc.next();
