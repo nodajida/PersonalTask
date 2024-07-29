@@ -60,12 +60,17 @@ public class App {
             System.out.println("결과: " + result);
             /* 연산의 결과를 배열에 저장합니다. */
             if (intList.size() >= 10) {
-                intList.remove(0); // 가장 먼저 저장된 결과 삭제
+                System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+                String intPut = sc.next();
+                if (intPut.equals("remove")) {
+                    intList.remove(0);
+                }  // 가장 먼저 저장된 결과 삭제
             }
             intList.add(result); // 새로운 결과를 추가
 
             /* 연산의 결과를 배열에 저장합니다. */
             /* index를 증가 시킵니다. */
+
 
 
 
