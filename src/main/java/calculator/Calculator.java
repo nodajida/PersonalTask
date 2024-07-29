@@ -1,7 +1,14 @@
 package calculator;
 
 public class Calculator {
-    public static int getResult(int num1, int num2, char operator) {
+//필드 영역
+
+    public Calculator() {
+        //생성자 영역 (생략가능)
+    }
+
+    //메소드 영역
+    static int calculate(int num1, int num2, char operator) {
         int result = 0;
         switch (operator) {
             case '+':
@@ -20,6 +27,7 @@ public class Calculator {
                 break;
         }
         System.out.println("결과: " + result);
-        return result;
+        int result1 = result;
+        return result1;
     }
 }
