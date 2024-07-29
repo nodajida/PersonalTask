@@ -56,6 +56,8 @@ public class App {
 
                     break;
             }
+
+            int result getResult();
             //결과 출력
             System.out.println("결과: " + result);
             /* 연산의 결과를 배열에 저장합니다. */
@@ -64,7 +66,6 @@ public class App {
                 if (intPut.equals("remove")) {
                     intList.remove(0);
                 }  // 가장 먼저 저장된 결과 삭제
-
             intList.add(result); // 새로운 결과를 추가
 
             /* 연산의 결과를 배열에 저장합니다. */
@@ -73,7 +74,6 @@ public class App {
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String input2 = sc.next();
             if (input2.equals("inquiry")) {
-
                 // 향상된 for문을 사용하여 저장된 연산 결과를 출력
                 for (int j : intList) {
                     System.out.println(j);
